@@ -208,7 +208,7 @@ w-25 mb-3">
 
 
   <label class="visually-hidden" for="autoSizingSelect" >Preference</label>
-  <select class="form-select text-dark" id="autoSizingSelect" >
+  <select class="form-select text-dark" id="bathroom_select_div" >
     <option selected>Select Bathroom</option>
     <option value="1">1 Bathroom</option>
     <option value="2">2 Bathroom</option>
@@ -250,9 +250,9 @@ w-25 mb-3">
                 
 
 <!-- select Laundry -->
-                  <div class="dropdown d-block px-lg-1 mx-auto mb-3">
+                  <div class="dropdown d-block px-lg-1 mx-auto mb-3" >
                   <label class="visually-hidden" for="autoSizingSelect" >Preference</label>
-                  <select class="form-select text-dark" id="autoSizingSelect" >
+                  <select class="form-select text-dark"  id='laundry_select_div' >
                     <option selected>Select Laundry</option>
                     <option value="1">0 Laundry</option>
                     <option value="1">1 Laundry</option>
@@ -1091,9 +1091,22 @@ border-width:0;color:gray;background-color:gray">
 <script>
   function myFunction() {
     var x = document.getElementById("bedroomNum").value;
+    if(x=='hourly'){
+        console.log(x);
+        var laundry=document.getElementById("laundry_select_div")
+        laundry.style.display='none'
+        var bathroom=document.getElementById('bathroom_select_div')
+        bathroom.style.display='none'
+    }else{
+        var laundry=document.getElementById("laundry_select_div")
+        laundry.style.display='block' 
+        var bathroom=document.getElementById('bathroom_select_div')
+        bathroom.style.display='block'
+    }
 
-    document.getElementById("selectBedrooms").innerHTML = x;
-    // document.getElementById("selectBedrooms").innerHTML = 
+     
+     document.getElementById("selectBedrooms").innerHTML = x;
+     // document.getElementById("selectBedrooms").innerHTML = 
     // "$ " + x;
   }
   </script>
